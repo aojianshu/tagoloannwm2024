@@ -33,11 +33,16 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(Auth::user()->admin == 1)
                     <x-nav-link :href="route('contestants')" :active="request()->routeIs('contestants')" wire:navigate>
                         {{ __('Contestants') }}
                     </x-nav-link>
                     <x-nav-link :href="route('judges')" :active="request()->routeIs('judges')" wire:navigate>
                         {{ __('Judges') }}
+                    </x-nav-link>
+                    @endif
+                    <x-nav-link :href="route('event')" :active="request()->routeIs('event')" wire:navigate>
+                        {{ __('Event') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -90,11 +95,16 @@ new class extends Component
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @if(Auth::user()->admin == 1)
             <x-responsive-nav-link :href="route('contestants')" :active="request()->routeIs('contestants')" wire:navigate>
                 {{ __('Contestants') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('judges')" :active="request()->routeIs('judges')" wire:navigate>
                 {{ __('Judges') }}
+            </x-responsive-nav-link>
+            @endif
+            <x-responsive-nav-link :href="route('event')" :active="request()->routeIs('event')" wire:navigate>
+                {{ __('Event') }}
             </x-responsive-nav-link>
         </div>
 

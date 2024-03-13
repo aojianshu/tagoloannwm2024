@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contestant extends Model
+class Portfolio extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function variety()
+    public function contestant()
     {
-        return $this->hasMany(Variety::class);
+        return $this->belongsTo(Contestant::class);
     }
 
-    public function portfolio()
+    public function judge()
     {
-        return $this->hasMany(Portfolio::class);
+        return $this->belongsTo(Judge::class);
     }
 }

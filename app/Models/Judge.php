@@ -20,4 +20,14 @@ class Judge extends Model
     {
         return $this->firstname . ' ' . $this->lastname;
     }
+
+    public function variety()
+    {
+        return $this->hasMany(Variety::class);
+    }
+
+    public function portfolio()
+    {
+        return $this->hasMany(Portfolio::class);
+    }
 }

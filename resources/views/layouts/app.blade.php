@@ -56,5 +56,10 @@
             </div>
             @endif
         </div>
+        <footer class="py-16 text-center text-sm text-black">
+            Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+            <br>
+            Developed by: ICI CDO, All Rights Reserved 2024
+        </footer>
     </body>
 </html>
